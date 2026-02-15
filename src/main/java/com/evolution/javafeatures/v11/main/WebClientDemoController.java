@@ -10,12 +10,10 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Flux;
 
-import java.util.List;
-
 @AllArgsConstructor
 @RestController
 @RequestMapping(path = "/features/v11/web-client-demo")
-public class WebClientDemo {
+public class WebClientDemoController {
 
     private final WebClient customWebClient;
 

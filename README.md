@@ -6,7 +6,7 @@
 
 **Java 14** : Records
 
-**Java 17** : Sealed classes, Hidden classes
+**Java 17** : Sealed classes/interfaces
 
 **Java 20** : Pattern matching for `switch`
 
