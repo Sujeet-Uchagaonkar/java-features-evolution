@@ -2,7 +2,7 @@ package com.evolution.javafeatures.v8.interfaces;
 
 public interface DefaultMethodInterface {
 
-    // Concrete
+    // Abstract
     void add(int i ,int j);
 
     //default method : new feature in Java 8
