@@ -1,4 +1,5 @@
-package com.evolution.javafeatures.designpatterns.beans;
+package com.evolution.javafeatures.designpatterns.types.factory;
+
 
 public class PaymentFactory {
 

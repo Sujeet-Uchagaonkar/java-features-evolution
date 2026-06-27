@@ -1,4 +1,4 @@
-package com.evolution.javafeatures.designpatterns.beans;
+package com.evolution.javafeatures.designpatterns.types.singleton;
 
 import java.util.Objects;
 
