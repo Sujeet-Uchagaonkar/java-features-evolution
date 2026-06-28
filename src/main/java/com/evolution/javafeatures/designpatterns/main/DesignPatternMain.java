@@ -1,6 +1,7 @@
 package com.evolution.javafeatures.designpatterns.main;
 
 import com.evolution.javafeatures.designpatterns.types.abstractfactory.*;
+import com.evolution.javafeatures.designpatterns.types.adapter.BaseApi;
 import com.evolution.javafeatures.designpatterns.types.mvccontroller.CartController;
 import com.evolution.javafeatures.designpatterns.types.mvccontroller.CartModel;
 import com.evolution.javafeatures.designpatterns.types.mvccontroller.CartView;
@@ -67,7 +68,7 @@ public class DesignPatternMain {
         //Adapter: Implements the target interface and uses the adaptee internally, acting as a bridge.
         //Client: Uses the target interface, unaware of the adapter or adaptee details.
         // So flow goes like this : Client -> Target -> Adapter <-> Adaptee
-        LegacySoapAdapter legacySoapAdapter = new LegacySoapAdapter();
+        BaseApi legacySoapAdapter = new LegacySoapAdapter();
         System.out.println("Adapter design pattern output :"+legacySoapAdapter.callExternalApi());
 
 
