@@ -26,7 +26,7 @@ public class CartController {
     }
 
     public void updateCartView(){
-        this.cartView.displayCart(cartModel);
+        this.cartView.displayCart(this.cartModel);
     }
 
 }

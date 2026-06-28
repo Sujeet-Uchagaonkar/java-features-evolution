@@ -2,6 +2,7 @@ package com.evolution.javafeatures.designpatterns.main;
 
 import com.evolution.javafeatures.designpatterns.types.abstractfactory.*;
 import com.evolution.javafeatures.designpatterns.types.adapter.BaseApi;
+import com.evolution.javafeatures.designpatterns.types.command.*;
 import com.evolution.javafeatures.designpatterns.types.mvccontroller.CartController;
 import com.evolution.javafeatures.designpatterns.types.mvccontroller.CartModel;
 import com.evolution.javafeatures.designpatterns.types.mvccontroller.CartView;
@@ -23,7 +24,7 @@ public class DesignPatternMain {
         /** Creational Design Patterns */
 
         //**** Singleton **** : Refer SingletonDemoBean class for implementation
-        //Ensures that a class has only one instance and provides a global access point to it. e.g. DB/Loggging config.
+        //Ensures that a class has only one instance and provides a global access point to it. e.g. DB/Logging config.
         //SingletonDemoBean singletonDemoBean = new SingletonDemoBean(); // This wont be allowed as it restricts creating new object
         SingletonDemoBean singletonDemoBean = SingletonDemoBean.getInstance(); // This ensures same instance is used which is created in its bean.
 
@@ -88,9 +89,24 @@ public class DesignPatternMain {
         System.out.println("Cart details after update:"+cartView.displayCart(cartModel));
 
 
+
+
+
+
+
         /** Behavioral Design Patterns */
 
         //**** Command design pattern ****
+        // This design pattern turns a request into object.
+        // Instead of calling an operation directly, the caller creates command object that contains all the information needed to perform the action later, pass it around, queue it, log it, or undo it.
+        // Useful when you want to decouple the object that triggers an action from the object that performs it
+        // We will have 5 key components: Command Interface(Command), Concrete Command(TurnOnCommand), Receiver(TV), Invoker(RemoteControl).
+        Device tv = new TV(); // Create Receiver implementation
+        Device mobile = new Mobile();
+        RemoteControl remoteControl1 = new RemoteControl(new TurnOnCommand(tv)); // Call invoker by passing command and receiver info. Here, invoker and action performer are seperated out.
+        System.out.println("TV turn on command response: "+remoteControl1.pressButton());
+        RemoteControl remoteControl2 = new RemoteControl(new TurnOffCommand(mobile));
+        System.out.println("Mobile turn off command response: "+remoteControl2.pressButton());
 
     }
 
